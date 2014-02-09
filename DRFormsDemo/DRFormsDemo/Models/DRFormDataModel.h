@@ -10,7 +10,8 @@
 
 @interface DRFormDataModel : NSObject
 
-@property (nonatomic, strong) NSNumber *select1;
-@property (nonatomic, strong) NSString *select2;
+@property (nonatomic, strong) NSNumber *property1;
+@property (nonatomic, strong) NSString *property2;
+@property (nonatomic, strong) NSString *property3;
 
 @end

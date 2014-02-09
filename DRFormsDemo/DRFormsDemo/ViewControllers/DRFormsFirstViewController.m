@@ -69,13 +69,13 @@
 {
     switch (section) {
         case 0:
-            return @"Select 1";
+            return @"Property 1";
             
         case 1:
-            return @"Select 2";
+            return @"Property 2";
             
         case 2:
-            return @"Select 2 (again)";
+            return @"Property 2 (again)";
             
         default:
             return nil;
@@ -86,13 +86,13 @@
 {
     switch (section) {
         case 0:
-            return @"Cells above are connected to fromData.select1 property.";
+            return @"Cells above are connected to fromData.property1";
             
         case 1:
-            return @"Cells above are connected to fromData.select2 property and have customized selection appearance.";
+            return @"Cells above are connected to fromData.property2 and have customized selection appearance.";
             
         case 2:
-            return @"Cells above are also connected to fromData.select2 property, but there are only two options defined.";
+            return @"Cells above are also connected to fromData.property2, but there are only two options defined.";
             
         default:
             return nil;
@@ -134,7 +134,7 @@
         }];
         
         [cell setObservedObject:((DRNavigationController *)self.navigationController).formData
-                     andKeyPath:NSStringFromSelector(@selector(select1))];
+                     andKeyPath:NSStringFromSelector(@selector(property1))];
         
         return cell;
     }
@@ -175,7 +175,7 @@
         }];
         
         [cell setObservedObject:((DRNavigationController *)self.navigationController).formData
-                                         andKeyPath:NSStringFromSelector(@selector(select2))];
+                     andKeyPath:NSStringFromSelector(@selector(property2))];
         
         return cell;
     }
@@ -207,7 +207,7 @@
         }];
         
         [cell setObservedObject:((DRNavigationController *)self.navigationController).formData
-                                         andKeyPath:NSStringFromSelector(@selector(select2))];
+                     andKeyPath:NSStringFromSelector(@selector(property2))];
         
         return cell;
     }
