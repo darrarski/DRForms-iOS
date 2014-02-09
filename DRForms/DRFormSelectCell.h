@@ -29,14 +29,15 @@
 
 /**
  *  This block will be called in order to determine if cell should be
- *  selected for given value. Set this block to implement custom
- *  value comparison.
+ *  selected for given value. Current value of observed property will be
+ *  passed as a argument. Set this block to implement custom value comparison.
  */
 @property (copy, nonatomic, setter = setShouldSelectForValueBlock:) BOOL (^shouldSelectForValue)(id value);
 
 /**
  *  This optional block will be called everytime the cell selection
- *  state changes. You can set the block in order to customize
+ *  state changes. Boolean property passed as a argument to this block tells
+ *  if cell should be selected. You can set the block in order to customize
  *  cell's selection style.
  */
 @property (copy, nonatomic, setter = setUpdateSelectionAppearanceBlock:) void (^updateSelectionAppearance)(BOOL selected);
