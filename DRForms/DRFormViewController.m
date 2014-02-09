@@ -88,6 +88,8 @@
 {
     [self deselectRowAnimated:YES];
     
+    [self.view endEditing:YES];
+    
     DRFormCell *cell = [self cellForRowAtIndexPath:indexPath];
     [cell selectCell];
     
