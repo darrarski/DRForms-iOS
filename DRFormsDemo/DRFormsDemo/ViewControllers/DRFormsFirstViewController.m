@@ -174,7 +174,7 @@
             cellWeak.backgroundColor = selected?[UIColor colorWithWhite:0.9 alpha:1.000]:[UIColor whiteColor];
         }];
         
-        [(DRFormSelectCell *)cell setObservedObject:((DRNavigationController *)self.navigationController).formData
+        [cell setObservedObject:((DRNavigationController *)self.navigationController).formData
                                          andKeyPath:NSStringFromSelector(@selector(select2))];
         
         return cell;
@@ -206,7 +206,7 @@
                     [cellWeak.cellValue isEqualToString:value]);
         }];
         
-        [(DRFormSelectCell *)cell setObservedObject:((DRNavigationController *)self.navigationController).formData
+        [cell setObservedObject:((DRNavigationController *)self.navigationController).formData
                                          andKeyPath:NSStringFromSelector(@selector(select2))];
         
         return cell;
