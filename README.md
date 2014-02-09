@@ -1,7 +1,7 @@
 DRForms
 =======
 
-iOS Objective-C library for implementing forms.
+iOS Objective-C library for implementing dynamic forms.
 
 ## Installation
 

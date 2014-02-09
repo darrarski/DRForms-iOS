@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "DRForms"
   s.version      = "0.1"
-  s.summary      = ""
+  s.summary      = "iOS Objective-C library for implementing dynamic forms."
   s.homepage     = "https://github.com/darrarski/DRForms-iOS"
   s.license      = 'MIT'
   s.author       = { "Darrarski" => "darrarski@gmail.com" }
