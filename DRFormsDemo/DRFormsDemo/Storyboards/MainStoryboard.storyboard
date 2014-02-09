@@ -52,6 +52,42 @@
                                     <outlet property="titleLabel" destination="zqH-a6-D3n" id="cme-EQ-uKb"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCell" id="KEI-OZ-4fO" customClass="DRFormDetailCell">
+                                <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KEI-OZ-4fO" id="QLp-f5-rOC">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Detail cell" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaz-fv-UJt">
+                                            <rect key="frame" x="15" y="13" width="197" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail cell" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyi-Er-dBx">
+                                            <rect key="frame" x="220" y="13" width="67" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eaz-fv-UJt" firstAttribute="leading" secondItem="QLp-f5-rOC" secondAttribute="leading" constant="15" id="NKO-5t-Mzt"/>
+                                        <constraint firstAttribute="trailing" secondItem="dyi-Er-dBx" secondAttribute="trailing" id="UE7-Mc-RHX"/>
+                                        <constraint firstAttribute="centerY" secondItem="dyi-Er-dBx" secondAttribute="centerY" id="gV8-Cy-PPZ"/>
+                                        <constraint firstItem="dyi-Er-dBx" firstAttribute="leading" secondItem="eaz-fv-UJt" secondAttribute="trailing" constant="8" id="jva-Gm-ah4"/>
+                                        <constraint firstAttribute="centerY" secondItem="eaz-fv-UJt" secondAttribute="centerY" id="lvs-SK-MOR"/>
+                                        <constraint firstAttribute="centerY" secondItem="dyi-Er-dBx" secondAttribute="centerY" id="m31-ig-xHG"/>
+                                        <constraint firstAttribute="trailing" secondItem="dyi-Er-dBx" secondAttribute="trailing" id="nLe-Yv-p1M"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailLabel" destination="dyi-Er-dBx" id="2ht-VH-DK4"/>
+                                    <outlet property="titleLabel" destination="eaz-fv-UJt" id="4LL-2P-Jyo"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="V19-l6-HQo" id="tA6-2c-3S3"/>
@@ -63,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="192" y="882"/>
         </scene>
-        <!--Forms First View Controller - Selects-->
+        <!--Forms First View Controller - Form-->
         <scene sceneID="5Rd-ra-r0s">
             <objects>
                 <viewController id="qL7-ci-cgr" customClass="DRFormsFirstViewController" sceneMemberID="viewController">
@@ -89,7 +125,7 @@
                             <constraint firstItem="Nwf-af-Wik" firstAttribute="leading" secondItem="EQq-aa-d5Q" secondAttribute="leading" id="wc8-nc-IER"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Selects" id="Hea-7o-RIp"/>
+                    <navigationItem key="navigationItem" title="Form" id="Hea-7o-RIp"/>
                     <connections>
                         <outlet property="formContainerView" destination="Nwf-af-Wik" id="LcM-z6-skX"/>
                     </connections>

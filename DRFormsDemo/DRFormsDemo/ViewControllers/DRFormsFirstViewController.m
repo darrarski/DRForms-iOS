@@ -8,9 +8,11 @@
 
 #import "DRFormsFirstViewController.h"
 #import "DRNavigationController.h"
+#import "DRFormDataModel.h"
 #import "DRFormViewController.h"
 #import "DRFormSelectCell.h"
-#import "DRFormDataModel.h"
+#import "DRFormDetailCell.h"
+#import "DRFormsFruitsViewController.h"
 
 @interface DRFormsFirstViewController () <DRFormViewControllerDelegate>
 
@@ -45,7 +47,7 @@
 
 - (NSInteger)formViewControllerNumberOfSections:(DRFormViewController *)formViewController
 {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)formViewController:(DRFormViewController *)formViewController numberOfRowsInSection:(NSInteger)section
@@ -59,6 +61,9 @@
             
         case 2:
             return 2;
+            
+        case 3:
+            return 1;
             
         default:
             return 0;
@@ -77,6 +82,9 @@
         case 2:
             return @"Property 2 (again)";
             
+        case 3:
+            return @"Property 3";
+            
         default:
             return nil;
     }
@@ -93,6 +101,9 @@
             
         case 2:
             return @"Cells above are also connected to fromData.property2, but there are only two options defined.";
+            
+        case 3:
+            return @"Cell above shows how to display additional view controller for picking a value.";
             
         default:
             return nil;
@@ -208,6 +219,28 @@
         
         [cell setObservedObject:((DRNavigationController *)self.navigationController).formData
                      andKeyPath:NSStringFromSelector(@selector(property2))];
+        
+        return cell;
+    }
+    else if (indexPath.section == 3) {
+        
+        DRFormDetailCell *cell = (DRFormDetailCell *)[formViewController reusableCellWithIdentifier:@"DetailCell" forIndexPath:indexPath];
+        
+        cell.titleLabel.text = @"Property 3";
+        
+        [cell setDetailLabelTextBlock:^NSString *(id value) {
+            return [value isKindOfClass:[NSString class]] ? value : nil;
+        }];
+        
+        [cell setSelectCellActionBlock:^{
+            DRFormsFruitsViewController *fruitsViewController = [[DRFormsFruitsViewController alloc] init];
+            fruitsViewController.observedObject = ((DRNavigationController *)self.navigationController).formData;
+            fruitsViewController.observedKeyPath = NSStringFromSelector(@selector(property3));
+            [self.navigationController pushViewController:fruitsViewController animated:YES];
+        }];
+        
+        [cell setObservedObject:((DRNavigationController *)self.navigationController).formData
+                     andKeyPath:NSStringFromSelector(@selector(property3))];
         
         return cell;
     }
