@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3111301C18A83219000527AF /* DRFormTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3111301B18A83219000527AF /* DRFormTextCell.m */; };
 		312F081818A7E7F8002FE5DD /* DRFormsFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 312F081718A7E7F8002FE5DD /* DRFormsFirstViewController.m */; };
 		312F081E18A7EB0A002FE5DD /* DRFormDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 312F081D18A7EB0A002FE5DD /* DRFormDataModel.m */; };
 		312F082118A80197002FE5DD /* DRFormDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 312F082018A80197002FE5DD /* DRFormDetailCell.m */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3111301A18A83219000527AF /* DRFormTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRFormTextCell.h; sourceTree = "<group>"; };
+		3111301B18A83219000527AF /* DRFormTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRFormTextCell.m; sourceTree = "<group>"; };
 		312F081618A7E7F8002FE5DD /* DRFormsFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRFormsFirstViewController.h; sourceTree = "<group>"; };
 		312F081718A7E7F8002FE5DD /* DRFormsFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRFormsFirstViewController.m; sourceTree = "<group>"; };
 		312F081C18A7EB0A002FE5DD /* DRFormDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRFormDataModel.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				312F082018A80197002FE5DD /* DRFormDetailCell.m */,
 				319C593018A7E0D000126CD1 /* DRFormSelectCell.h */,
 				319C593118A7E0D000126CD1 /* DRFormSelectCell.m */,
+				3111301A18A83219000527AF /* DRFormTextCell.h */,
+				3111301B18A83219000527AF /* DRFormTextCell.m */,
 				319C592A18A7DE1D00126CD1 /* DRFormViewController.h */,
 				319C592B18A7DE1D00126CD1 /* DRFormViewController.m */,
 			);
@@ -256,6 +261,7 @@
 				319C592418A7DC6700126CD1 /* DRNavigationController.m in Sources */,
 				312F082118A80197002FE5DD /* DRFormDetailCell.m in Sources */,
 				312F081818A7E7F8002FE5DD /* DRFormsFirstViewController.m in Sources */,
+				3111301C18A83219000527AF /* DRFormTextCell.m in Sources */,
 				318BD00618A7D8860029C404 /* DRViewController.m in Sources */,
 				312F082718A807A5002FE5DD /* DRFormsFruitsViewController.m in Sources */,
 				319C592C18A7DE1D00126CD1 /* DRFormViewController.m in Sources */,
