@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSNumber *property1;
 @property (nonatomic, strong) NSString *property2;
 @property (nonatomic, strong) NSString *property3;
+@property (nonatomic, strong) NSString *property4;
 
 @end

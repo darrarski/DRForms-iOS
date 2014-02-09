@@ -13,6 +13,7 @@
 #import "DRFormSelectCell.h"
 #import "DRFormDetailCell.h"
 #import "DRFormsFruitsViewController.h"
+#import "DRFormTextCell.h"
 
 @interface DRFormsFirstViewController () <DRFormViewControllerDelegate>
 
@@ -47,7 +48,7 @@
 
 - (NSInteger)formViewControllerNumberOfSections:(DRFormViewController *)formViewController
 {
-    return 4;
+    return 5;
 }
 
 - (NSInteger)formViewController:(DRFormViewController *)formViewController numberOfRowsInSection:(NSInteger)section
@@ -63,6 +64,9 @@
             return 2;
             
         case 3:
+            return 1;
+            
+        case 4:
             return 1;
             
         default:
@@ -85,6 +89,9 @@
         case 3:
             return @"Property 3";
             
+        case 4:
+            return @"Property 4";
+            
         default:
             return nil;
     }
@@ -104,6 +111,9 @@
             
         case 3:
             return @"Cell above shows how to display additional view controller for picking a value.";
+            
+        case 4:
+            return @"Cell above is connected to formData.property4";
             
         default:
             return nil;
@@ -241,6 +251,17 @@
         
         [cell setObservedObject:((DRNavigationController *)self.navigationController).formData
                      andKeyPath:NSStringFromSelector(@selector(property3))];
+        
+        return cell;
+    }
+    else if (indexPath.section == 4) {
+        
+        DRFormTextCell *cell = (DRFormTextCell *)[formViewController reusableCellWithIdentifier:@"TextCell" forIndexPath:indexPath];
+        
+        cell.titleLabel.text = @"Property 4";
+        
+        [cell setObservedObject:((DRNavigationController *)self.navigationController).formData
+                     andKeyPath:NSStringFromSelector(@selector(property4))];
         
         return cell;
     }

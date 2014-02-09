@@ -88,6 +88,39 @@
                                     <outlet property="titleLabel" destination="eaz-fv-UJt" id="4LL-2P-Jyo"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" id="FE5-bz-tHr" customClass="DRFormTextCell">
+                                <rect key="frame" x="0.0" y="143" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FE5-bz-tHr" id="Zv0-SG-AEw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text cell" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnO-YW-dG8">
+                                            <rect key="frame" x="15" y="13" width="56" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhc-eU-zW7">
+                                            <rect key="frame" x="79" y="7" width="231" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="lhc-eU-zW7" secondAttribute="centerY" id="A8b-dt-BJa"/>
+                                        <constraint firstItem="WnO-YW-dG8" firstAttribute="leading" secondItem="Zv0-SG-AEw" secondAttribute="leading" constant="15" id="HBz-3I-h5r"/>
+                                        <constraint firstAttribute="centerY" secondItem="WnO-YW-dG8" secondAttribute="centerY" id="MBV-no-LWe"/>
+                                        <constraint firstItem="lhc-eU-zW7" firstAttribute="leading" secondItem="WnO-YW-dG8" secondAttribute="trailing" constant="8" id="mFA-gb-KNP"/>
+                                        <constraint firstAttribute="trailing" secondItem="lhc-eU-zW7" secondAttribute="trailing" constant="10" id="xRX-H6-bvV"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="lhc-eU-zW7" id="y7t-Bv-e1x"/>
+                                    <outlet property="titleLabel" destination="WnO-YW-dG8" id="eq8-49-Um8"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="V19-l6-HQo" id="tA6-2c-3S3"/>
