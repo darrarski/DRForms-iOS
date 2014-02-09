@@ -5,7 +5,11 @@ iOS Objective-C library for implementing forms.
 
 ## Installation
 
-...
+You can install the library using CocoaPods. To do so, you will need to add one of the following lines to your Podfile:
+
+For most recent or development version:
+
+	pod "DRForms", :git => "https://github.com/darrarski/DRForms-iOS"
 
 ## Usage
 
