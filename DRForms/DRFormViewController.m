@@ -9,12 +9,27 @@
 #import "DRFormViewController.h"
 #import "DRFormCell.h"
 
+@interface DRFormViewController ()
+
+@property (nonatomic, strong) NSMutableDictionary *cellHeightCache;
+
+@end
+
 @implementation DRFormViewController
+
+- (NSMutableDictionary *)cellHeightCache
+{
+	if (!_cellHeightCache) {
+		_cellHeightCache = [[NSMutableDictionary alloc] init];
+	}
+	return _cellHeightCache;
+}
 
 #pragma mark - Public form methods
 
 - (void)reloadForm
 {
+	_cellHeightCache = nil;
     [self.tableView reloadData];
 }
 
@@ -108,20 +123,14 @@
         return [self.tableView rowHeight];
     }
     
-    static NSMutableDictionary *heightCache;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        heightCache = [[NSMutableDictionary alloc] init];
-    });
-    
-    NSNumber *cachedHeight = heightCache[cellIdentifier];
+	NSNumber *cachedHeight = self.cellHeightCache[cellIdentifier];
     if (cachedHeight) {
         return cachedHeight.floatValue;
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     CGFloat height = cell.bounds.size.height;
-    heightCache[cellIdentifier] = @(height);
+    self.cellHeightCache[cellIdentifier] = @(height);
     return height;
 }
 
