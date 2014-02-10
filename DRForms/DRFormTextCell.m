@@ -28,6 +28,7 @@
     self.titleLabel.text = nil;
     self.textField.text = nil;
     self.cursorPosition = nil;
+    self.returnKeyAction = nil;
 }
 
 - (void)refreshValue

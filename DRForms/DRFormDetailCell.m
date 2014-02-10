@@ -16,6 +16,8 @@
     
     self.titleLabel.text = nil;
     self.detailLabel.text = nil;
+    self.detailLabelText = nil;
+    self.selectCellAction = nil;
 }
 
 - (void)refreshValue

@@ -15,6 +15,9 @@
     [super prepareForReuse];
     
     self.titleLabel.text = nil;
+    self.cellValue = nil;
+    self.shouldSelectForValue = nil;
+    self.updateSelectionAppearance = nil;
     self.updateSelectionAppearance(NO);
 }
 
