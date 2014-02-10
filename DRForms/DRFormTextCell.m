@@ -27,6 +27,7 @@
     
     self.titleLabel.text = nil;
     self.textField.text = nil;
+	self.textField.placeholder = nil;
     self.cursorPosition = nil;
     self.returnKeyAction = nil;
 }
