@@ -43,6 +43,20 @@
     return [self.tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
 }
 
+- (DRFormCell *)reusableCellForIndexPath:(NSIndexPath *)indexPath
+{
+    NSAssert([self.formViewControllerDelegate respondsToSelector:@selector(formViewController:cellIdenfirierForRowAtIndexPath:)],
+             @"Missing implementation of method formViewController:cellIdenfirierForRowAtIndexPath: in form view controller delegate");
+    
+    NSString *cellIdentifier = [self.formViewControllerDelegate formViewController:self cellIdenfirierForRowAtIndexPath:indexPath];
+    
+    NSAssert(cellIdentifier && ![cellIdentifier isEqualToString:@""],
+             @"Method formViewController:cellIdenfirierForRowAtIndexPath: not implemented for index path {%d, %d}", indexPath.section, indexPath.row);
+    
+    return [self reusableCellWithIdentifier:cellIdentifier
+                               forIndexPath:indexPath];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -80,6 +94,35 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [self.formViewControllerDelegate formViewController:self cellForRowAtIndexPath:indexPath];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (![self.formViewControllerDelegate respondsToSelector:@selector(formViewController:cellIdenfirierForRowAtIndexPath:)]) {
+        return [self.tableView rowHeight];
+    }
+    
+    NSString *cellIdentifier = [self.formViewControllerDelegate formViewController:self cellIdenfirierForRowAtIndexPath:indexPath];
+    
+    if (!cellIdentifier || [cellIdentifier isEqualToString:@""]) {
+        return [self.tableView rowHeight];
+    }
+    
+    static NSMutableDictionary *heightCache;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        heightCache = [[NSMutableDictionary alloc] init];
+    });
+    
+    NSNumber *cachedHeight = heightCache[cellIdentifier];
+    if (cachedHeight) {
+        return cachedHeight.floatValue;
+    }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    CGFloat height = cell.bounds.size.height;
+    heightCache[cellIdentifier] = @(height);
+    return height;
 }
 
 #pragma mark - Table view delegate

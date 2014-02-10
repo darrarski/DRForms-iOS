@@ -72,6 +72,18 @@
  */
 - (void)formViewController:(DRFormViewController *)formViewController didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
+/**
+ *  This method will be called to get identifier for a cell with given index path.
+ *  This method is optional, unless you want to use reusableCellForIndexPath: method.
+ *  Implementing this method enables you to set custom row height using InterfaceBuilder!
+ *
+ *  @param formViewController form view controller
+ *  @param indexPath          index path of the cell
+ *
+ *  @return cell identifier
+ */
+- (NSString *)formViewController:(DRFormViewController *)formViewController cellIdenfirierForRowAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 @interface DRFormViewController : UITableViewController
@@ -111,5 +123,16 @@
  *  @return dequeued reusable cell
  */
 - (DRFormCell *)reusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  Dequeues reusable cell for given index path.
+ *  In order to user this method, you have to implement formViewController:cellIdenfirierForRowAtIndexPath:
+ *  method in form view controller delegate.
+ *
+ *  @param indexPath cell's index path
+ *
+ *  @return dequeued reusable cell
+ */
+- (DRFormCell *)reusableCellForIndexPath:(NSIndexPath *)indexPath;
 
 @end
