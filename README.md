@@ -33,6 +33,8 @@ For specific version:
 
 Where `VERSION_BRANCH` you should put the branch name for given version (ex. "v1.x"). It is recommended to set version branch explicity, as backward compatibility between those branches is not warranted. Master branch always contains the most recent version.
 
+You can also download zip archive of given release from [releases page](https://github.com/darrarski/DRForms-iOS/releases).
+
 ## Usage
 
 Public methods of the library are documented in-code. For detailed examples check out attached demo project.
