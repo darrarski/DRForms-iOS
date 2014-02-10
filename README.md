@@ -35,6 +35,6 @@ Public methods of the library are documented in-code. For detailed examples chec
 
 Code in this project is available under the MIT license.
 
-### Credits
+## Credits
 
 [JosephH answer on StackOverflow](http://stackoverflow.com/a/16881312/514181) for setting custom cell height in `UITableView` with dynamic cells, using only InterfaceBuilder
