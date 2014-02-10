@@ -120,11 +120,30 @@
     }
 }
 
+- (NSString *)formViewController:(DRFormViewController *)formViewController cellIdenfirierForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case 0:
+        case 1:
+        case 2:
+            return @"SelectCell";
+            
+        case 3:
+            return @"DetailCell";
+            
+        case 4:
+            return @"TextCell";
+            
+        default:
+            return nil;
+    }
+}
+
 - (DRFormCell *)formViewController:(DRFormViewController *)formViewController cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
         
-        DRFormSelectCell *cell = (DRFormSelectCell *)[formViewController reusableCellWithIdentifier:@"SelectCell" forIndexPath:indexPath];
+        DRFormSelectCell *cell = (DRFormSelectCell *)[formViewController reusableCellForIndexPath:indexPath];
         
         switch (indexPath.row) {
             case 0:
@@ -161,7 +180,7 @@
     }
     else if (indexPath.section == 1) {
         
-        DRFormSelectCell *cell = (DRFormSelectCell *)[formViewController reusableCellWithIdentifier:@"SelectCell" forIndexPath:indexPath];
+        DRFormSelectCell *cell = (DRFormSelectCell *)[formViewController reusableCellForIndexPath:indexPath];
         
         switch (indexPath.row) {
             case 0:
@@ -202,7 +221,7 @@
     }
     else if (indexPath.section == 2) {
         
-        DRFormSelectCell *cell = (DRFormSelectCell *)[formViewController reusableCellWithIdentifier:@"SelectCell" forIndexPath:indexPath];
+        DRFormSelectCell *cell = (DRFormSelectCell *)[formViewController reusableCellForIndexPath:indexPath];
         
         switch (indexPath.row) {
             case 0:
@@ -234,7 +253,7 @@
     }
     else if (indexPath.section == 3) {
         
-        DRFormDetailCell *cell = (DRFormDetailCell *)[formViewController reusableCellWithIdentifier:@"DetailCell" forIndexPath:indexPath];
+        DRFormDetailCell *cell = (DRFormDetailCell *)[formViewController reusableCellForIndexPath:indexPath];
         
         cell.titleLabel.text = @"Property 3";
         
@@ -256,7 +275,7 @@
     }
     else if (indexPath.section == 4) {
         
-        DRFormTextCell *cell = (DRFormTextCell *)[formViewController reusableCellWithIdentifier:@"TextCell" forIndexPath:indexPath];
+        DRFormTextCell *cell = (DRFormTextCell *)[formViewController reusableCellForIndexPath:indexPath];
         
         cell.titleLabel.text = @"Property 4";
         
