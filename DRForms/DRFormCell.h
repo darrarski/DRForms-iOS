@@ -13,13 +13,13 @@
 /**
  *  Cell's observed object.
  */
-@property (nonatomic, readonly) id observedObject;
+@property (nonatomic, readonly, weak) id observedObject;
 
 /**
  *  Cell's observed keypath that points to a property of obseverdObject
  *  that will be associated with the cell.
  */
-@property (nonatomic, readonly) NSString *observedKeyPath;
+@property (nonatomic, readonly, strong) NSString *observedKeyPath;
 
 /**
  *  Use this method to set property associated with the cell
