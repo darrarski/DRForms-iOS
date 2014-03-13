@@ -66,7 +66,7 @@
     NSString *cellIdentifier = [self.formViewControllerDelegate formViewController:self cellIdenfirierForRowAtIndexPath:indexPath];
     
     NSAssert(cellIdentifier && ![cellIdentifier isEqualToString:@""],
-             @"Method formViewController:cellIdenfirierForRowAtIndexPath: not implemented for index path {%ld, %ld}", indexPath.section, (long)indexPath.row);
+             @"Method formViewController:cellIdenfirierForRowAtIndexPath: not implemented for index path {%ld, %ld}", (long)indexPath.section, (long)indexPath.row);
     
     return [self reusableCellWithIdentifier:cellIdentifier
                                forIndexPath:indexPath];
