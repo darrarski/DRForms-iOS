@@ -17,6 +17,30 @@
 
 @implementation DRFormViewController
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+	
+	[[self.tableView visibleCells] enumerateObjectsUsingBlock:^(DRFormCell *cell, NSUInteger idx, BOOL *stop) {
+		if (![cell isKindOfClass:[DRFormCell class]]) {
+			return;
+		}
+		[cell cleanupObservers];
+	}];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
+	[[self.tableView visibleCells] enumerateObjectsUsingBlock:^(DRFormCell *cell, NSUInteger idx, BOOL *stop) {
+		if (![cell isKindOfClass:[DRFormCell class]]) {
+			return;
+		}
+		[cell setupObservers];
+	}];
+}
+
 - (NSMutableDictionary *)cellHeightCache
 {
 	if (!_cellHeightCache) {
@@ -135,6 +159,20 @@
 }
 
 #pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if ([cell isKindOfClass:[DRFormCell class]]) {
+		[(DRFormCell *)cell setupObservers];
+	}
+}
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if ([cell isKindOfClass:[DRFormCell class]]) {
+		[(DRFormCell *)cell cleanupObservers];
+	}
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

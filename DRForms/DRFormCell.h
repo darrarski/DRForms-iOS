@@ -39,4 +39,14 @@
  */
 - (void)selectCell;
 
+/**
+ *  Configure KVO observing for the cell
+ */
+- (void)setupObservers;
+
+/**
+ *  Cleanup KVO observing for the cell
+ */
+- (void)cleanupObservers;
+
 @end
