@@ -17,6 +17,18 @@
 
 @implementation DRFormViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	[[self.tableView visibleCells] enumerateObjectsUsingBlock:^(DRFormCell *cell, NSUInteger idx, BOOL *stop) {
+		if (![cell isKindOfClass:[DRFormCell class]]) {
+			return;
+		}
+		[cell setupObservers];
+	}];
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
 	[super viewDidDisappear:animated];
@@ -26,18 +38,6 @@
 			return;
 		}
 		[cell cleanupObservers];
-	}];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-	[super viewDidAppear:animated];
-	
-	[[self.tableView visibleCells] enumerateObjectsUsingBlock:^(DRFormCell *cell, NSUInteger idx, BOOL *stop) {
-		if (![cell isKindOfClass:[DRFormCell class]]) {
-			return;
-		}
-		[cell setupObservers];
 	}];
 }
 
