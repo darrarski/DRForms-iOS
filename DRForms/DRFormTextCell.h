@@ -30,4 +30,10 @@
  */
 @property (copy, nonatomic, setter = setReturnKeyActionBlock:) void (^returnKeyAction)();
 
+/**
+ *  You can set this block in order to do some text modification 
+ *  or validation in the real time.
+ */
+@property (copy, nonatomic, setter = setTextModificationBlock:) NSString *(^textModificationBlock)(NSString *text);
+
 @end

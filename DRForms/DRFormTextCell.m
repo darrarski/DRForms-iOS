@@ -80,11 +80,15 @@
     if (self.observedObject && self.observedKeyPath) {
         
         NSString *text = [textField.text stringByReplacingCharactersInRange:range withString:string];
+		
+		if (self.textModificationBlock) {
+			text = self.textModificationBlock(text);
+		}
         
         // save current cursor position
         self.cursorPosition = @(range.location + string.length);
-        
-        [self.observedObject setValue:text
+		
+		[self.observedObject setValue:text
                                forKey:self.observedKeyPath];
     }
     
