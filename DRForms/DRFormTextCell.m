@@ -10,8 +10,6 @@
 
 @interface DRFormTextCell () <UITextFieldDelegate>
 
-@property (nonatomic, strong) NSNumber *cursorPosition;
-
 @end
 
 @implementation DRFormTextCell
@@ -78,18 +76,31 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     if (self.observedObject && self.observedKeyPath) {
-        
-        NSString *text = [textField.text stringByReplacingCharactersInRange:range withString:string];
 		
-		if (self.textModificationBlock) {
-			text = self.textModificationBlock(text);
+		BOOL abortChange = NO;
+		NSString *text = nil;
+		
+		// save cursor position
+		self.cursorPosition = @(range.location + string.length);
+		
+		if (self.changeCharactersInRangeBlock) {
+			text = self.changeCharactersInRangeBlock(&abortChange, textField.text, range, string);
 		}
-        
-        // save current cursor position
-        self.cursorPosition = @(range.location + string.length);
+		else {
+			text = [textField.text stringByReplacingCharactersInRange:range withString:string];
+			
+			#pragma clang diagnostic push
+			#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+			if (self.textModificationBlock) {
+				text = self.textModificationBlock(text);
+			}
+			#pragma clang diagnostic pop
+		}
 		
-		[self.observedObject setValue:text
-                               forKey:self.observedKeyPath];
+		if (!abortChange) {
+			[self.observedObject setValue:text
+								   forKey:self.observedKeyPath];
+		}
     }
     
     return NO;
