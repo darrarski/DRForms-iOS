@@ -8,6 +8,7 @@
 
 #import "DRFormViewController.h"
 #import "DRFormCell.h"
+#import "UIView+DRFormsHelper.h"
 
 @interface DRFormViewController ()
 
@@ -162,14 +163,14 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if ([cell isKindOfClass:[DRFormCell class]]) {
+	if ([cell isKindOfClass:[DRFormCell class]] && ![cell.contentView DRForms_containsFirstResponder]) {
 		[(DRFormCell *)cell setupObservers];
 	}
 }
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if ([cell isKindOfClass:[DRFormCell class]]) {
+	if ([cell isKindOfClass:[DRFormCell class]] && ![cell.contentView DRForms_containsFirstResponder]) {
 		[(DRFormCell *)cell cleanupObservers];
 	}
 }
