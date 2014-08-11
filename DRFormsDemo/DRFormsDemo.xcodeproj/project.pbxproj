@@ -25,6 +25,7 @@
 		319C592C18A7DE1D00126CD1 /* DRFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 319C592B18A7DE1D00126CD1 /* DRFormViewController.m */; };
 		319C592F18A7DF8F00126CD1 /* DRFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319C592E18A7DF8F00126CD1 /* DRFormCell.m */; };
 		319C593218A7E0D000126CD1 /* DRFormSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319C593118A7E0D000126CD1 /* DRFormSelectCell.m */; };
+		319F3232199979390098624B /* UIView+DRFormsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F3231199979390098624B /* UIView+DRFormsHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		319C592E18A7DF8F00126CD1 /* DRFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRFormCell.m; sourceTree = "<group>"; };
 		319C593018A7E0D000126CD1 /* DRFormSelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRFormSelectCell.h; sourceTree = "<group>"; };
 		319C593118A7E0D000126CD1 /* DRFormSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRFormSelectCell.m; sourceTree = "<group>"; };
+		319F3230199979390098624B /* UIView+DRFormsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DRFormsHelper.h"; sourceTree = "<group>"; };
+		319F3231199979390098624B /* UIView+DRFormsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DRFormsHelper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,8 @@
 				3111301B18A83219000527AF /* DRFormTextCell.m */,
 				319C592A18A7DE1D00126CD1 /* DRFormViewController.h */,
 				319C592B18A7DE1D00126CD1 /* DRFormViewController.m */,
+				319F3230199979390098624B /* UIView+DRFormsHelper.h */,
+				319F3231199979390098624B /* UIView+DRFormsHelper.m */,
 			);
 			name = DRForms;
 			path = ../DRForms;
@@ -265,6 +270,7 @@
 				318BD00618A7D8860029C404 /* DRViewController.m in Sources */,
 				312F082718A807A5002FE5DD /* DRFormsFruitsViewController.m in Sources */,
 				319C592C18A7DE1D00126CD1 /* DRFormViewController.m in Sources */,
+				319F3232199979390098624B /* UIView+DRFormsHelper.m in Sources */,
 				318BCFFC18A7D8860029C404 /* main.m in Sources */,
 				319C593218A7E0D000126CD1 /* DRFormSelectCell.m in Sources */,
 			);
