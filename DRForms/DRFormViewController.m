@@ -9,6 +9,7 @@
 #import "DRFormViewController.h"
 #import "DRFormCell.h"
 #import "UIView+DRFormsHelper.h"
+#import "UITableView+DRFormsHelper.h"
 
 @interface DRFormViewController ()
 
@@ -22,24 +23,14 @@
 {
 	[super viewWillAppear:animated];
 	
-	[[self.tableView visibleCells] enumerateObjectsUsingBlock:^(DRFormCell *cell, NSUInteger idx, BOOL *stop) {
-		if (![cell isKindOfClass:[DRFormCell class]]) {
-			return;
-		}
-		[cell setupObservers];
-	}];
+    [self.tableView DRForms_setupObserversForVisibleCells];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
 	[super viewDidDisappear:animated];
 	
-	[[self.tableView visibleCells] enumerateObjectsUsingBlock:^(DRFormCell *cell, NSUInteger idx, BOOL *stop) {
-		if (![cell isKindOfClass:[DRFormCell class]]) {
-			return;
-		}
-		[cell cleanupObservers];
-	}];
+    [self.tableView DRForms_cleanupObserversForVisibleCells];
 }
 
 - (NSMutableDictionary *)cellHeightCache
@@ -71,11 +62,7 @@
 
 - (void)deselectRowAnimated:(BOOL)animated
 {
-    NSIndexPath *selectedRowIndexPath = [self.tableView indexPathForSelectedRow];
-    if (selectedRowIndexPath) {
-        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow]
-                                      animated:animated];
-    }
+    [self.tableView DRForms_deselectRowAnimated:animated];
 }
 
 - (DRFormCell *)reusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath
