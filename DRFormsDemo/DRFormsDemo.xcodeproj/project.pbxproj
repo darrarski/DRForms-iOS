@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3111301C18A83219000527AF /* DRFormTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3111301B18A83219000527AF /* DRFormTextCell.m */; };
+		312D5F9E199D6B7400EB140A /* UITableView+DRFormsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 312D5F9D199D6B7400EB140A /* UITableView+DRFormsHelper.m */; };
 		312F081818A7E7F8002FE5DD /* DRFormsFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 312F081718A7E7F8002FE5DD /* DRFormsFirstViewController.m */; };
 		312F081E18A7EB0A002FE5DD /* DRFormDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 312F081D18A7EB0A002FE5DD /* DRFormDataModel.m */; };
 		312F082118A80197002FE5DD /* DRFormDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 312F082018A80197002FE5DD /* DRFormDetailCell.m */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		3111301A18A83219000527AF /* DRFormTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRFormTextCell.h; sourceTree = "<group>"; };
 		3111301B18A83219000527AF /* DRFormTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRFormTextCell.m; sourceTree = "<group>"; };
+		312D5F9C199D6B7400EB140A /* UITableView+DRFormsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+DRFormsHelper.h"; sourceTree = "<group>"; };
+		312D5F9D199D6B7400EB140A /* UITableView+DRFormsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DRFormsHelper.m"; sourceTree = "<group>"; };
 		312F081618A7E7F8002FE5DD /* DRFormsFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRFormsFirstViewController.h; sourceTree = "<group>"; };
 		312F081718A7E7F8002FE5DD /* DRFormsFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRFormsFirstViewController.m; sourceTree = "<group>"; };
 		312F081C18A7EB0A002FE5DD /* DRFormDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRFormDataModel.h; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				3111301B18A83219000527AF /* DRFormTextCell.m */,
 				319C592A18A7DE1D00126CD1 /* DRFormViewController.h */,
 				319C592B18A7DE1D00126CD1 /* DRFormViewController.m */,
+				312D5F9C199D6B7400EB140A /* UITableView+DRFormsHelper.h */,
+				312D5F9D199D6B7400EB140A /* UITableView+DRFormsHelper.m */,
 				319F3230199979390098624B /* UIView+DRFormsHelper.h */,
 				319F3231199979390098624B /* UIView+DRFormsHelper.m */,
 			);
@@ -273,6 +278,7 @@
 				319F3232199979390098624B /* UIView+DRFormsHelper.m in Sources */,
 				318BCFFC18A7D8860029C404 /* main.m in Sources */,
 				319C593218A7E0D000126CD1 /* DRFormSelectCell.m in Sources */,
+				312D5F9E199D6B7400EB140A /* UITableView+DRFormsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
