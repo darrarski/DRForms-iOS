@@ -23,15 +23,17 @@ Library provides nice workaround for setting custom table view cell heights usin
 
 You can install the library using CocoaPods. To do so, you will need to add one of the following lines to your Podfile:
 
-For most recent or development version:
+For stable release (recommended):
 
-	pod "DRForms", :git => "https://github.com/darrarski/DRForms-iOS"
+    pod 'DRForms', '~> 1.0.9'
 
-For specific version:
+Which creates dependency for version `>= 1.0.9` and `< 1.1`
 
-	pod "DRForms", :git => "https://github.com/darrarski/DRForms-iOS", :branch => "VERSION_BRANCH"
+For most recent or exact development version (not recommended on production):
 
-Where `VERSION_BRANCH` you should put the branch name for given version (ex. "v1.x"). It is recommended to set version branch explicity, as backward compatibility between those branches is not warranted. Master branch always contains the most recent version.
+    pod 'DRForms', :git => 'https://github.com/darrarski/DRForms-iOS.git' :tag => 'VERSION_TAG'
+    
+Where `VERSION_TAG` you should put tag name for given version (ex. "v1.0.9"). It is recommended to set version explicity instead of using most recent version, as backward compatibility is not warranted.
 
 You can also download zip archive of given release from [releases page](https://github.com/darrarski/DRForms-iOS/releases).
 
