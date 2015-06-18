@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { "Darrarski" => "darrarski@gmail.com" }
   s.source       = { :git => "https://github.com/darrarski/DRForms-iOS.git", :tag => "v1.0.9" }
   s.platform     = :ios
+  s.ios.deployment_target = '7.0'
   s.source_files = 'DRForms'
   s.requires_arc = true
 end
